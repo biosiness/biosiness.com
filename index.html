@@ -1,0 +1,610 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Biosiness</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Biosiness: bio-based materials made in Italy from upcycled coffee silverskin. Non-woven fabric, granules and strings for B2B brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a material swatch book. Wide photo-led bands, each material read like a spec sheet. */
+:root {
+  --paper: #f4f3f1;
+  --panel: #ebe8e4;
+  --ink: #1c1613;
+  --muted: #625953;
+  --line: #d8d3cd;
+  --teal: #1d5c63;
+  --teal-ink: #ffffff;
+  --skin: #a8784a;
+  --espresso: #1c1613;
+  --on-espresso: #ede8e3;
+  --on-espresso-muted: #b3a9a1;
+  --logo-filter: brightness(0);
+  --deep: #1d5c63;
+  --on-photo: #f3ede6;
+  --on-photo-muted: rgb(243 237 230 / 0.78);
+  --on-photo-line: rgb(243 237 230 / 0.38);
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --wrap: 1180px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14100e; --panel: #1e1916; --ink: #ede8e3; --muted: #a89e96; --line: #2f2824;
+    --teal: #6fb1b6; --teal-ink: #0f1a1b; --skin: #c99a69;
+    --espresso: #0d0a09; --on-espresso: #ede8e3; --on-espresso-muted: #a89e96;
+    --deep: #17474c; --logo-filter: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #14100e; --panel: #1e1916; --ink: #ede8e3; --muted: #a89e96; --line: #2f2824;
+  --teal: #6fb1b6; --teal-ink: #0f1a1b; --skin: #c99a69;
+  --espresso: #0d0a09; --on-espresso: #ede8e3; --on-espresso-muted: #a89e96;
+  --deep: #17474c; --logo-filter: none; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 400 17px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+body.it .l-en, body:not(.it) .l-it { display: none !important; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: var(--wrap); margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 700px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.4vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); }
+h3 { font-size: 1.6rem; }
+p { margin: 0; max-width: 62ch; }
+.label {
+  font: 500 0.74rem/1.3 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+}
+.lede { font-size: 1.15rem; color: var(--muted); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5em; padding: 0.8em 1.3em;
+  font: 600 0.95rem/1 var(--body); text-decoration: none; border-radius: 2px;
+  border: 1px solid var(--teal); background: var(--teal); color: var(--teal-ink); cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.btn:hover { background: transparent; color: var(--teal); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); }
+
+/* header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--espresso); }
+.top {
+  position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 5;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  transition: background 0.3s, border-color 0.3s;
+}
+/* over the hero photo the header is transparent with light type */
+.top:not(.solid) {
+  --ink: var(--on-photo); --muted: var(--on-photo-muted); --line: var(--on-photo-line); --paper: var(--espresso);
+  --logo-filter: none;
+  background: transparent; backdrop-filter: none; border-bottom-color: transparent;
+}
+.top .wrap { display: flex; align-items: center; gap: 24px; height: 72px; max-width: none; }
+.logo img { width: 128px; filter: var(--logo-filter); transition: opacity 0.3s; }
+.top:not(.solid) .logo img { opacity: 0; }
+.nav { display: flex; gap: 26px; margin-left: auto; }
+.nav a { text-decoration: none; font-size: 0.93rem; color: var(--muted); }
+.nav a:hover { color: var(--ink); }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 2px; }
+.lang button {
+  font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; padding: 7px 9px; border: 0;
+  background: transparent; color: var(--muted); cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+@media (max-width: 860px) { .nav { display: none; } .lang { margin-left: auto; } .top .btn { display: none; } }
+
+/* hero */
+.hero {
+  position: relative; overflow: hidden; display: grid; align-items: end;
+  min-height: clamp(600px, 92vh, 980px); background: var(--espresso); color: var(--on-photo);
+}
+.hero-bg { position: absolute; inset: 0; margin: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 35% 55%; animation: settle 2.6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes settle { from { transform: scale(1.08); } to { transform: scale(1); } }
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgb(18 13 11 / 0.6) 0%, rgb(18 13 11 / 0) 22%),
+    linear-gradient(20deg, rgb(18 13 11 / 0.92) 0%, rgb(18 13 11 / 0.55) 38%, rgb(18 13 11 / 0) 70%);
+}
+.hero-copy { position: relative; z-index: 1; display: grid; gap: 22px; padding-block: 140px clamp(48px, 7vw, 88px); width: 100%; }
+.hero-copy > * { min-width: 0; }
+.hero-mark { width: clamp(260px, 52vw, 720px); margin-left: -0.6%; }
+.hero h1 { font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 500; max-width: 24ch; }
+.hero .lede { color: var(--on-photo-muted); max-width: 52ch; }
+.hero .label { color: var(--on-photo-muted); }
+.hero-copy .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.hero .btn.ghost { color: var(--on-photo); border-color: var(--on-photo-line); }
+.hero .btn.ghost:hover { border-color: var(--on-photo); }
+.scroll-cue {
+  position: absolute; z-index: 1; right: max(32px, env(safe-area-inset-right, 0px)); bottom: clamp(48px, 7vw, 88px);
+  writing-mode: vertical-rl; font: 500 0.7rem/1 var(--mono); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--on-photo-muted); text-decoration: none; display: flex; align-items: center; gap: 14px;
+}
+.scroll-cue::after { content: ""; width: 1px; height: 64px; background: var(--on-photo-line); }
+@media (max-width: 700px) { .scroll-cue { display: none; } .hero { min-height: 640px; } .hero-bg img { object-position: 22% 50%; } }
+@media (prefers-reduced-motion: reduce) { .hero-bg img { animation: none; } }
+
+/* figures */
+.figures { border-bottom: 1px solid var(--line); }
+.figures .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.fig { padding: 28px 20px 28px 0; display: grid; gap: 6px; align-content: start; }
+.fig + .fig { border-left: 1px solid var(--line); padding-left: 24px; }
+.fig b { font: 600 clamp(2.2rem, 4vw, 3.2rem)/1 var(--display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.fig b small { font-size: 0.5em; margin-left: 2px; color: var(--muted); }
+.fig span { font-size: 0.9rem; color: var(--muted); max-width: 22ch; }
+@media (max-width: 700px) {
+  .figures .wrap { grid-template-columns: 1fr 1fr; }
+  .fig:nth-child(3) { border-left: 0; padding-left: 0; }
+  .fig:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* origin */
+section { scroll-margin-top: 72px; }
+.band { padding-block: clamp(64px, 9vw, 120px); }
+.origin { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
+.origin figure { margin: 0; }
+.origin figcaption { margin-top: 10px; }
+.origin .text { display: grid; gap: 20px; min-width: 0; }
+@media (max-width: 800px) { .origin { grid-template-columns: 1fr; } }
+
+/* science */
+.science { display: grid; grid-template-columns: 0.25fr 1fr; gap: 16px clamp(24px, 5vw, 64px); margin-top: clamp(56px, 8vw, 96px); padding-top: 28px; border-top: 1px solid var(--ink); }
+.science > * { min-width: 0; }
+.science-body { display: grid; gap: 28px; }
+.claim { font: 500 clamp(1.6rem, 3.2vw, 2.6rem)/1.18 var(--display); letter-spacing: -0.02em; max-width: 28ch; text-wrap: balance; }
+.science-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.science-cta p { color: var(--muted); }
+@media (max-width: 700px) { .science { grid-template-columns: 1fr; } }
+
+/* values */
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); margin-top: clamp(48px, 7vw, 80px); }
+.value { padding: 24px 24px 0 0; display: grid; gap: 8px; align-content: start; }
+.value + .value { padding-left: 24px; border-left: 1px solid var(--line); }
+.value h3 { font-size: 1.2rem; }
+.value p { color: var(--muted); font-size: 0.97rem; }
+@media (max-width: 700px) {
+  .values { grid-template-columns: 1fr; }
+  .value + .value { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .value { padding-bottom: 20px; }
+}
+
+/* materials */
+.materials { background: var(--espresso); color: var(--on-espresso); }
+.materials .label, .materials .lede { color: var(--on-espresso-muted); }
+.mat-head { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; align-items: end; margin-bottom: clamp(40px, 6vw, 72px); }
+.mat-head > * { min-width: 0; }
+.formulas { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; margin-top: 16px; border-block: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); }
+.formulas div { display: flex; align-items: baseline; gap: 18px; padding: 22px 24px 22px 0; min-width: 0; }
+.formulas div + div { padding-left: 24px; border-left: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); }
+.formulas b { font: 600 clamp(2.4rem, 4.4vw, 3.6rem)/1 var(--display); letter-spacing: -0.03em; color: var(--skin); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.formulas span { color: var(--on-espresso); max-width: 30ch; }
+.formulas small { color: var(--on-espresso-muted); font-size: 0.85em; }
+@media (max-width: 800px) { .formulas { grid-template-columns: 1fr; } .formulas div + div { padding-left: 0; border-left: 0; border-top: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); } .formulas div { flex-direction: column; gap: 8px; } }
+@media (max-width: 800px) { .mat-head { grid-template-columns: 1fr; } }
+.mat {
+  display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(24px, 5vw, 64px);
+  padding-block: clamp(32px, 4vw, 48px); border-top: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent);
+  align-items: start;
+}
+.mat:nth-of-type(even) .mat-img { order: 2; }
+.mat-img { aspect-ratio: 1; overflow: hidden; max-width: 100%; }
+.mat-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.mat:hover .mat-img img { transform: scale(1.03); }
+.mat-body { display: grid; gap: 18px; min-width: 0; }
+.mat-body .no { font: 500 0.78rem/1 var(--mono); letter-spacing: 0.12em; color: var(--skin); text-transform: uppercase; }
+.mat-body h3 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+.mat-body p { color: var(--on-espresso-muted); }
+.spec { margin: 8px 0 0; display: grid; grid-template-columns: max-content 1fr; border-top: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); }
+.spec dt, .spec dd { margin: 0; padding: 11px 0; border-bottom: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); }
+.spec dt { font: 500 0.72rem/1.9 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-espresso-muted); padding-right: 28px; }
+.spec dd { font-size: 0.97rem; }
+@media (max-width: 800px) {
+  .mat { grid-template-columns: 1fr; }
+  .mat:nth-of-type(even) .mat-img { order: 0; }
+  .mat-img { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 440px) { .spec { grid-template-columns: 1fr; } .spec dt { border-bottom: 0; padding-bottom: 0; } .spec dd { padding-top: 2px; } }
+.catalogue {
+  margin-top: clamp(32px, 5vw, 56px); padding: clamp(24px, 4vw, 40px);
+  border: 1px solid color-mix(in srgb, var(--on-espresso) 22%, transparent);
+  display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between;
+}
+.catalogue p { font-size: 1.1rem; max-width: 52ch; }
+.materials .btn { background: var(--on-espresso); color: var(--espresso); border-color: var(--on-espresso); }
+.materials .btn:hover { background: transparent; color: var(--on-espresso); }
+
+/* industries */
+.industries { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.industries span { border: 1px solid color-mix(in srgb, var(--on-espresso) 25%, transparent); padding: 6px 12px; font-size: 0.88rem; border-radius: 99px; }
+
+/* made in italy */
+.italy { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 6vw, 72px); align-items: center; }
+.italy .text { display: grid; gap: 20px; min-width: 0; }
+.map { background: #ffffff; padding: clamp(8px, 2vw, 20px); border: 1px solid var(--line); margin: 0; }
+.map figcaption { color: #6b625c; padding: 10px 4px 0; }
+@media (max-width: 860px) { .italy { grid-template-columns: 1fr; } }
+.map-col { display: grid; gap: 24px; min-width: 0; }
+.supply { font: 500 clamp(1.35rem, 2.4vw, 1.9rem)/1.2 var(--display); letter-spacing: -0.02em; text-wrap: balance; padding-left: 18px; border-left: 3px solid var(--teal); max-width: 30ch; }
+
+/* contact */
+.contact { background: var(--panel); }
+.contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 80px); }
+.contact-grid > * { min-width: 0; }
+.contact .text { display: grid; gap: 20px; align-content: start; }
+.mail {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin-top: 8px; padding: 18px 20px; background: var(--paper); border: 1px solid var(--line);
+}
+.mail a { font: 600 clamp(1.05rem, 2.4vw, 1.4rem)/1.2 var(--display); text-decoration: none; overflow-wrap: anywhere; }
+.mail a:hover { color: var(--teal); }
+.copy { margin-left: auto; font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 12px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 2px; cursor: pointer; }
+.copy:hover { border-color: var(--ink); }
+.facts { margin: 0; display: grid; gap: 0; }
+.facts div { display: grid; grid-template-columns: 9.5em 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.facts div:first-child { border-top: 1px solid var(--line); }
+.facts dt { font: 500 0.72rem/1.9 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; }
+@media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { .facts div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* material stats */
+.mat-stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); }
+.mat-stats div { padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.mat-stats div + div { border-left: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); }
+.mat-stats b { font: 600 1.7rem/1 var(--display); color: var(--on-espresso); letter-spacing: -0.02em; }
+.mat-stats span { font-size: 0.85rem; color: var(--on-espresso-muted); }
+@media (max-width: 440px) { .mat-stats { grid-template-columns: 1fr; } .mat-stats div + div { border-left: 0; border-top: 1px solid color-mix(in srgb, var(--on-espresso) 18%, transparent); } }
+
+/* sample replication */
+.sample { background: var(--deep); color: var(--on-photo); }
+.sample .label, .sample p { color: var(--on-photo-muted); }
+.sample-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.sample .text { display: grid; gap: 22px; min-width: 0; }
+.sample h2 { font-size: clamp(2rem, 4vw, 3.3rem); }
+.sample .btn { background: var(--on-photo); color: var(--deep); border-color: var(--on-photo); }
+.sample .btn:hover { background: transparent; color: var(--on-photo); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; min-width: 0; }
+.steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 22px; border-top: 1px solid var(--on-photo-line); }
+.steps li:last-child { border-bottom: 1px solid var(--on-photo-line); }
+.steps b { font: 600 2.4rem/1 var(--display); color: var(--on-photo); }
+.steps h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.steps div { min-width: 0; }
+@media (max-width: 800px) { .sample-grid { grid-template-columns: 1fr; } }
+
+/* italian chain */
+.chain { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.chain li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font: 600 1.05rem/1.3 var(--display); }
+.chain li:nth-child(odd) { padding-right: 20px; }
+.chain li:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line); }
+.chain em { font: 500 0.7rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; color: var(--teal); }
+@media (max-width: 440px) { .chain { grid-template-columns: 1fr; } .chain li:nth-child(n) { padding-inline: 0; border-left: 0; } }
+
+footer { padding-block: 28px; border-top: 1px solid var(--line); font-size: 0.86rem; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+footer a { color: var(--muted); }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Biosiness home"><img src="img/logo.webp" alt="Biosiness" width="773" height="250"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about"><span class="l-en">About</span><span class="l-it">Chi siamo</span></a>
+      <a href="#materials"><span class="l-en">Materials</span><span class="l-it">Materiali</span></a>
+      <a href="#sample"><span class="l-en">Samples</span><span class="l-it">Campioni</span></a>
+      <a href="#italy">Made in Italy</a>
+      <a href="#contact"><span class="l-en">Contact</span><span class="l-it">Contatti</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="lang-it" data-lang="it" aria-pressed="false">IT</button>
+    </div>
+    <a class="btn" href="#contact"><span class="l-en">Request catalogue</span><span class="l-it">Richiedi il catalogo</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <figure class="hero-bg">
+      <img src="img/hero-wide.webp" width="1920" height="1280" alt="Coffee grounds poured from a moka pot onto brown Biosiness non-woven fabric" fetchpriority="high">
+    </figure>
+    <div class="wrap hero-copy">
+        <img class="hero-mark" src="img/logo.webp" width="773" height="250" alt="Biosiness, 100% made in Italy">
+        <h1>
+          <span class="l-en">Industrialised bio-materials, upcycled from the coffee&nbsp;industry.</span>
+          <span class="l-it">Bio-materiali industrializzati, dall’upcycling dell’industria del&nbsp;caffè.</span>
+        </h1>
+        <p class="lede">
+          <span class="l-en">We turn coffee roasting by-products into non-woven fabric, granules and strings for manufacturers. So far, 100% made in Northern Italy.</span>
+          <span class="l-it">Trasformiamo i sottoprodotti della torrefazione del caffè in tessuto non tessuto, granuli e stringhe per i produttori. Finora, 100% prodotti nel Nord Italia.</span>
+        </p>
+        <div class="actions">
+          <a class="btn" href="#contact"><span class="l-en">Request the catalogue</span><span class="l-it">Richiedi il catalogo</span></a>
+          <a class="btn ghost" href="#materials"><span class="l-en">See the materials</span><span class="l-it">Scopri i materiali</span></a>
+        </div>
+    </div>
+    <a class="scroll-cue" href="#about">Milano · Est. 2018</a>
+  </section>
+  <section class="hero-after">
+    <div class="figures">
+      <div class="wrap">
+        <div class="fig"><b>~9</b><span class="l-en">years of R&amp;D, since 2018</span><span class="l-it">anni di R&amp;S, dal 2018</span></div>
+        <div class="fig"><b>20<small>+</small></b><span class="l-en">industrial partners</span><span class="l-it">partner industriali</span></div>
+        <div class="fig"><b>2<small>&nbsp;million+</small></b><span class="l-en">linear metres of annual production capacity</span><span class="l-it">metri lineari di capacità produttiva annua</span></div>
+        <div class="fig"><b>TRL&nbsp;9</b><span class="l-en">technology proven in industrial production</span><span class="l-it">tecnologia validata in produzione industriale</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="band">
+    <div class="wrap">
+      <div class="origin">
+        <figure>
+          <img src="img/silverskin.webp" width="1024" height="683" alt="Close-up of coffee silverskin, the thin flakes released from beans during roasting" loading="lazy">
+          <figcaption class="label"><span class="l-en">Raw material: coffee silverskin</span><span class="l-it">Materia prima: silverskin del caffè</span></figcaption>
+        </figure>
+        <div class="text">
+          <p class="label"><span class="l-en">About us</span><span class="l-it">Chi siamo</span></p>
+          <h2><span class="l-en">A by-product of roasting, turned into a material platform.</span><span class="l-it">Un sottoprodotto della tostatura, diventato una piattaforma di materiali.</span></h2>
+          <p class="l-en">Since 2018 we have been developing materials from coffee silverskin, the thin layer released from coffee beans during roasting. After years of research, testing and industrial-scale production, we have built a family of materials that offers a concrete alternative to fossil-based and animal-derived materials.</p>
+          <p class="l-it">Dal 2018 sviluppiamo soluzioni a partire dalla silverskin, la sottile pellicola che si separa dal chicco durante la tostatura. Dopo anni di ricerca, test e produzione su scala industriale, abbiamo creato una famiglia di materiali pensata per offrire un’alternativa concreta ai materiali di origine fossile o animale.</p>
+          <p class="l-en">Our technology operates at TRL 9 and is backed by a network of production partners in Northern Italy. The result is a customizable, scalable material that works with existing industrial processes.</p>
+          <p class="l-it">Oggi la nostra tecnologia opera a TRL 9 ed è supportata da una rete di partner produttivi nel Nord Italia. Il risultato è un materiale personalizzabile, scalabile e compatibile con i processi industriali esistenti.</p>
+        </div>
+      </div>
+      <div class="science">
+        <p class="label"><span class="l-en">The science</span><span class="l-it">La scienza</span></p>
+        <div class="science-body">
+          <p class="claim"><span class="l-en">The coffee in our materials is not an additive. It is bonded into the polymer chains, as part of the material’s structure.</span><span class="l-it">Il caffè nei nostri materiali non è un additivo. È legato all’interno delle catene polimeriche, come parte della struttura del materiale.</span></p>
+          <div class="science-cta">
+            <p><span class="l-en">We share the science behind it under NDA.</span><span class="l-it">Condividiamo la scienza alla base sotto NDA.</span></p>
+            <a class="btn ghost" href="#contact"><span class="l-en">Sign an NDA and talk to us</span><span class="l-it">Firma un NDA e parliamone</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="values">
+        <div class="value">
+          <h3><span class="l-en">Sustainability</span><span class="l-it">Sostenibilità</span></h3>
+          <p class="l-en">Sustainability is not our value proposition. It is our duty.</p>
+          <p class="l-it">La sostenibilità non è la nostra proposta di valore. È il nostro dovere.</p>
+        </div>
+        <div class="value">
+          <h3><span class="l-en">Innovative design</span><span class="l-it">Design innovativo</span></h3>
+          <p class="l-en">A coffee-based material platform built for performance and customization.</p>
+          <p class="l-it">Una famiglia di bio-materiali a base di caffè, progettata per prestazioni tecniche e personalizzazione.</p>
+        </div>
+        <div class="value">
+          <h3>Made in Italy</h3>
+          <p class="l-en">Raw material, production machinery, design and know-how. All Italian, all traceable.</p>
+          <p class="l-it">Materia prima, macchinari di produzione, design e know-how. Tutto italiano, tutto tracciabile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="materials" class="band materials">
+    <div class="wrap">
+      <div class="mat-head">
+        <div style="display:grid;gap:16px">
+          <p class="label"><span class="l-en">Materials</span><span class="l-it">Materiali</span></p>
+          <h2><span class="l-en">One family of bio-materials, three formats.</span><span class="l-it">Una famiglia di bio-materiali, tre formati.</span></h2>
+        </div>
+        <div style="display:grid;gap:16px">
+          <p class="lede"><span class="l-en">From flexible surfaces to processable compounds, each material adapts to your manufacturing process, format and product category.</span><span class="l-it">Dalle soluzioni per superfici ai compositi processabili, ogni materiale si adatta al tuo processo produttivo, formato e categoria di prodotto.</span></p>
+          <div class="industries" aria-label="Industries">
+            <span class="l-en">Packaging</span><span class="l-it">Packaging</span>
+            <span class="l-en">Furniture</span><span class="l-it">Arredo</span>
+            <span class="l-en">Fashion</span><span class="l-it">Moda</span>
+            <span class="l-en">Accessories</span><span class="l-it">Accessori</span>
+            <span class="l-en">Transport</span><span class="l-it">Trasporti</span>
+          </div>
+        </div>
+        <div class="formulas">
+          <div><b>100+</b><span class="l-en">structural formulas based on industrial applications <small>(excluding the color palette)</small></span><span class="l-it">formulazioni strutturali basate sulle applicazioni industriali <small>(esclusa la palette colori)</small></span></div>
+          <div><b>80–95%</b><span class="l-en">bio-based content in the final article, always</span><span class="l-it">di contenuto bio-based nell’articolo finale, sempre</span></div>
+        </div>
+      </div>
+
+      <article class="mat">
+        <div class="mat-img"><img src="img/non-woven.webp" width="900" height="900" alt="Non-woven fabric swatches in several browns and surface textures" loading="lazy"></div>
+        <div class="mat-body">
+          <span class="no"><span class="l-en">Material 01 · Roll goods</span><span class="l-it">Materiale 01 · In rotolo</span></span>
+          <h3><span class="l-en">Non-woven fabric</span><span class="l-it">Tessuto non tessuto</span></h3>
+          <p class="l-en">A customizable roll material for surfaces in packaging, furniture, fashion, accessories and interiors. It combines flexibility, durability and a distinctive tactile finish.</p>
+          <p class="l-it">Un materiale personalizzabile in rotolo per superfici in packaging, arredo, moda, accessori e interni. Combina flessibilità, resistenza e una finitura tattile distintiva.</p>
+          <div class="mat-stats">
+            <div><b>500+</b><span class="l-en">surface effects</span><span class="l-it">effetti superficie</span></div>
+            <div><b>∞</b><span class="l-en">colors, no limits</span><span class="l-it">colori, senza limiti</span></div>
+            <div><b>400+</b><span class="l-en">textile support options</span><span class="l-it">opzioni di supporto tessile</span></div>
+          </div>
+          <dl class="spec">
+            <dt><span class="l-en">Format</span><span class="l-it">Formato</span></dt>
+            <dd><span class="l-en">1.5 m width, 25 m rolls</span><span class="l-it">Larghezza 1,5 m, rotoli da 25 m</span></dd>
+            <dt><span class="l-en">Options</span><span class="l-it">Opzioni</span></dt>
+            <dd><span class="l-en">Thickness, unlimited colors, 500+ surface effects</span><span class="l-it">Spessore, colori illimitati, oltre 500 effetti superficie</span></dd>
+            <dt><span class="l-en">Backing</span><span class="l-it">Supporto</span></dt>
+            <dd><span class="l-en">400+ textile support options</span><span class="l-it">Oltre 400 opzioni di supporto tessile</span></dd>
+            <dt><span class="l-en">Scent</span><span class="l-it">Aroma</span></dt>
+            <dd><span class="l-en">Natural coffee scent, adjustable or neutralized</span><span class="l-it">Aroma naturale di caffè, modulabile o neutralizzabile</span></dd>
+            <dt><span class="l-en">Uses</span><span class="l-it">Impieghi</span></dt>
+            <dd><span class="l-en">Secondary packaging, furniture, accessories, interiors, fashion</span><span class="l-it">Packaging secondario, arredo, accessori, interni, moda</span></dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="mat">
+        <div class="mat-img"><img src="img/granules.webp" width="900" height="900" alt="Dark bio-based compound granules" loading="lazy"></div>
+        <div class="mat-body">
+          <span class="no"><span class="l-en">Material 02 · Compound</span><span class="l-it">Materiale 02 · Compound</span></span>
+          <h3><span class="l-en">Granules</span><span class="l-it">Granuli</span></h3>
+          <p class="l-en">A bio-based compound that fits into existing manufacturing lines. A circular alternative for molded components, technical parts and custom projects.</p>
+          <p class="l-it">Un compound bio-based che si integra nei processi produttivi esistenti. Un’alternativa circolare per componenti stampati, parti tecniche e progetti personalizzati.</p>
+          <dl class="spec">
+            <dt><span class="l-en">Processes</span><span class="l-it">Processi</span></dt>
+            <dd><span class="l-en">Injection molding, extrusion, selected 3D printing</span><span class="l-it">Stampaggio a iniezione, estrusione, stampa 3D selezionata</span></dd>
+            <dt><span class="l-en">Adjustable</span><span class="l-it">Regolabili</span></dt>
+            <dd><span class="l-en">Mechanical properties, color, scent</span><span class="l-it">Proprietà meccaniche, colore, aroma</span></dd>
+            <dt><span class="l-en">Uses</span><span class="l-it">Impieghi</span></dt>
+            <dd><span class="l-en">Packaging, molded components, technical parts, custom projects</span><span class="l-it">Packaging, componenti stampati, parti tecniche, progetti su misura</span></dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="mat">
+        <div class="mat-img"><img src="img/strings.webp" width="900" height="900" alt="Extruded bio-based strings with a speckled coffee finish" loading="lazy"></div>
+        <div class="mat-body">
+          <span class="no"><span class="l-en">Material 03 · Extruded</span><span class="l-it">Materiale 03 · Estruso</span></span>
+          <h3><span class="l-en">Strings</span><span class="l-it">Stringhe</span></h3>
+          <p class="l-en">Custom extruded strings for technical and decorative uses. Light, flexible and resistant, with an organic look. Use them as single strands or process them into structured products.</p>
+          <p class="l-it">Stringhe estruse su misura per applicazioni tecniche e decorative. Leggere, flessibili e resistenti, con un’estetica organica. Utilizzabili come fili singoli o lavorate per creare prodotti strutturati.</p>
+          <dl class="spec">
+            <dt><span class="l-en">Options</span><span class="l-it">Opzioni</span></dt>
+            <dd><span class="l-en">Diameter, color, elasticity</span><span class="l-it">Diametro, colore, elasticità</span></dd>
+            <dt><span class="l-en">Formats</span><span class="l-it">Formati</span></dt>
+            <dd><span class="l-en">Single strands or further processed</span><span class="l-it">Fili singoli o ulteriormente lavorati</span></dd>
+            <dt><span class="l-en">Uses</span><span class="l-it">Impieghi</span></dt>
+            <dd><span class="l-en">Technical and decorative applications</span><span class="l-it">Applicazioni tecniche e decorative</span></dd>
+          </dl>
+        </div>
+      </article>
+
+      <div class="catalogue">
+        <p><span class="l-en">The full catalogue covers technical details, customization options and commercial specifications.</span><span class="l-it">Il catalogo completo include dettagli tecnici, opzioni di personalizzazione e specifiche commerciali.</span></p>
+        <a class="btn" href="#contact"><span class="l-en">Request the catalogue</span><span class="l-it">Richiedi il catalogo</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sample" class="band sample">
+    <div class="wrap sample-grid">
+      <div class="text">
+        <p class="label"><span class="l-en">Sample replication</span><span class="l-it">Replica del campione</span></p>
+        <h2><span class="l-en">Send us your ideal sample. We will replicate it to our own standards.</span><span class="l-it">Inviaci il tuo campione ideale. Lo replichiamo secondo i nostri standard.</span></h2>
+        <p class="l-en">Already have a material you love, or one you want to replace? Send it to us. We reproduce its look and feel with our coffee-based material, made 100% in Italy.</p>
+        <p class="l-it">Hai già un materiale che ami, o uno che vuoi sostituire? Inviacelo. Ne riproduciamo aspetto e mano con il nostro materiale a base di caffè, 100% made in Italy.</p>
+        <div><a class="btn" href="#contact"><span class="l-en">Send us your sample</span><span class="l-it">Inviaci il tuo campione</span></a></div>
+      </div>
+      <ol class="steps">
+        <li><b>1</b><div><h3><span class="l-en">You send the sample</span><span class="l-it">Ci invii il campione</span></h3><p class="l-en">Any material: fabric, surface, molded part or string.</p><p class="l-it">Qualsiasi materiale: tessuto, superficie, parte stampata o filo.</p></div></li>
+        <li><b>2</b><div><h3><span class="l-en">We replicate it</span><span class="l-it">Lo replichiamo</span></h3><p class="l-en">Color, surface effect, thickness and backing, matched with our own material.</p><p class="l-it">Colore, effetto superficie, spessore e supporto, riprodotti con il nostro materiale.</p></div></li>
+        <li><b>3</b><div><h3><span class="l-en">You test our version</span><span class="l-it">Testi la nostra versione</span></h3><p class="l-en">You receive the replica to evaluate before production.</p><p class="l-it">Ricevi la replica da valutare prima della produzione.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="italy" class="band">
+    <div class="wrap italy">
+      <div class="text">
+        <p class="label"><span class="l-en">Production</span><span class="l-it">Produzione</span></p>
+        <h2><span class="l-en">100% made in Italy. Everything.</span><span class="l-it">100% Made in Italy. Tutto.</span></h2>
+        <p class="l-en">Not just the final product. Every part of the chain is Italian, made through a production network across Northern Italy with full territorial traceability.</p>
+        <p class="l-it">Non solo il prodotto finale. Ogni parte della filiera è italiana, realizzata da una rete produttiva nel Nord Italia con piena tracciabilità territoriale.</p>
+        <ul class="chain">
+          <li><span class="l-en">Raw material</span><span class="l-it">Materia prima</span><em>Italia</em></li>
+          <li><span class="l-en">Production machinery</span><span class="l-it">Macchinari di produzione</span><em>Italia</em></li>
+          <li><span class="l-en">Design</span><span class="l-it">Design</span><em>Italia</em></li>
+          <li>Know-how<em>Italia</em></li>
+        </ul>
+        <img src="img/hands.webp" width="976" height="458" alt="Hands smoothing a sheet of brown non-woven fabric">
+      </div>
+      <div class="map-col">
+      <figure class="map">
+        <img src="img/map.webp" width="1400" height="858" alt="Map of Piedmont, Lombardy and Veneto marking the Biosiness production network around Milano">
+        <figcaption class="label"><span class="l-en">Production network · Piedmont, Lombardy, Veneto</span><span class="l-it">Rete produttiva · Piemonte, Lombardia, Veneto</span></figcaption>
+      </figure>
+      <p class="supply"><span class="l-en">Our main innovation is the design of our optimised supply chain.</span><span class="l-it">La nostra innovazione principale è il design della nostra filiera ottimizzata.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="band contact">
+    <div class="wrap contact-grid">
+      <div class="text">
+        <p class="label"><span class="l-en">Contact</span><span class="l-it">Contatti</span></p>
+        <h2><span class="l-en">Request the catalogue or a sample.</span><span class="l-it">Richiedi il catalogo o un campione.</span></h2>
+        <p class="l-en">Tell us your product, the process you use and the quantities you need, or ask us where to send your sample. We reply with the catalogue and next steps.</p>
+        <p class="l-it">Raccontaci il tuo prodotto, il processo che utilizzi e le quantità di cui hai bisogno, oppure chiedici dove spedire il tuo campione. Ti rispondiamo con il catalogo e i prossimi passi.</p>
+        <div class="mail">
+          <a id="mail" href="mailto:info@biosiness.com?subject=Catalogue%20request">info@biosiness.com</a>
+          <button type="button" class="copy" id="copy"><span class="l-en">Copy</span><span class="l-it">Copia</span></button>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt><span class="l-en">Company</span><span class="l-it">Società</span></dt><dd>Biosiness srl</dd></div>
+        <div><dt><span class="l-en">Status</span><span class="l-it">Qualifica</span></dt><dd>Startup innovativa 2024</dd></div>
+        <div><dt><span class="l-en">VAT no.</span><span class="l-it">P. IVA</span></dt><dd>IT 13880700961</dd></div>
+        <div><dt><span class="l-en">Executive office</span><span class="l-it">Sede operativa</span></dt><dd>20134 Milano (MI)</dd></div>
+        <div><dt><span class="l-en">Registered office</span><span class="l-it">Sede legale</span></dt><dd>20094 Corsico (MI)</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Biosiness srl · P. IVA 13880700961</span>
+    <span><a href="https://biosiness.com/legal-notice">Legal notice</a> · <a href="https://biosiness.com/privacy">Privacy policy</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var body = document.body;
+  var btns = document.querySelectorAll('.lang button');
+  function setLang(l) {
+    body.classList.toggle('it', l === 'it');
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+    document.documentElement.lang = l;
+    try { localStorage.setItem('bsn-lang', l); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('bsn-lang'); } catch (e) {}
+  setLang(saved || ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en'));
+  btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+
+  var top = document.querySelector('.top');
+  var hero = document.querySelector('.hero');
+  function onScroll() { top.classList.toggle('solid', window.scrollY > hero.offsetHeight - top.offsetHeight - 10); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  var copy = document.getElementById('copy');
+  copy.addEventListener('click', function () {
+    var addr = 'info@biosiness.com';
+    var done = function () {
+      var it = body.classList.contains('it');
+      copy.textContent = it ? 'Copiato' : 'Copied';
+      setTimeout(function () { copy.innerHTML = '<span class="l-en">Copy</span><span class="l-it">Copia</span>'; }, 1800);
+    };
+    var select = function () {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(done, select);
+    } else { select(); }
+  });
+})();
+</script>
+
+</body></html>
